@@ -63,7 +63,7 @@ npm start
 ## Technologies Used
 
 - Core:
-  [![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
+- [![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
 - Base:
 
 - ![React](https://img.shields.io/badge/-React-blue?logo=react&logoColor=white&style=flat)
@@ -73,9 +73,9 @@ npm start
 - Payment:
 - ![Stripe](https://img.shields.io/badge/-Stripe-green?logo=stripe&logoColor=white&style=flat)
 - Styling:
-  [![My Skills](https://skillicons.dev/icons?i=materialui,styledcomponents,bootstrap)](https://skillicons.dev)
+- [![My Skills](https://skillicons.dev/icons?i=materialui,styledcomponents,bootstrap)](https://skillicons.dev)
 - Backend:
-  [![My Skills](https://skillicons.dev/icons?i=firebase)](https://skillicons.dev)
+- [![My Skills](https://skillicons.dev/icons?i=firebase)](https://skillicons.dev)
 
 ## Contributing
 
