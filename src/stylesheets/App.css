@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap");
+
+[data-theme="dark"] {
+  --body-bg: rgb(34, 34, 34);
+  --select-text: rgb(24, 24, 24);
+  /* yellow */
+  --yellow-theme: #f8ad02;
+  --lightyellow-theme: #ffdf95;
+  --darkyellow-theme: #f85002;
+  /* green */
+  --green-theme: rgb(77, 163, 106);
+  --lightgreen-theme: rgb(156, 255, 189);
+  --darkgreen-theme: rgb(0, 132, 42);
+  /* blue */
+  --blue-theme: rgb(73, 122, 157);
+  --lightblue-theme: rgb(141, 207, 255);
+  --darkblue-theme: rgb(0, 120, 206);
+  /* crimson */
+  --crimson-theme: rgb(233, 22, 64);
+  --lightcrimson-theme: rgb(255, 129, 154);
+  --darkcrimson-theme: rgb(198, 0, 40);
+  /* pink */
+  --pink-theme: rgb(233, 115, 197);
+  --lightpink-theme: rgb(255, 187, 234);
+  --darkpink-theme: rgb(201, 43, 154);
+  /* avocado */
+  --avocado-theme: rgb(162, 208, 156);
+  --lightavocado-theme: rgb(210, 255, 207);
+  --darkavocado-theme: rgb(103, 200, 93);
+  --avocado-img: url("../resources/images/logos/LD_AV.png");
+  --yellow-img: url("../resources/images/logos/DL_R.png");
+  --crimson-img: url("../resources/images/logos/LD_CR.png");
+  --blue-img: url("../resources/images/logos/LD_BL.png");
+  --green-img: url("../resources/images/logos/LD_GR.png");
+  --pink-img: url("../resources/images/logos/LD_PI.png");
+
+  --lightcolor-theme: var(--lightcrimson-theme);
+  --darkcolor-theme: var(--darkcrimson-theme);
+  --color-theme: var(--crimson-theme);
+  --logo-img: var(--crimson-img);
+  --white-black-dim: rgb(0, 0, 0);
+  --wbd-text: rgb(255, 255, 255);
+  --body-color: var(--white-black-dim);
+}
+
+[data-theme="dim"] {
+  --body-bg: rgb(0, 0, 0);
+  /* yellow */
+  --yellow-theme: #f8ad02;
+  --lightyellow-theme: #ffdf95;
+  --darkyellow-theme: #f85002;
+  /* green */
+  --green-theme: rgb(77, 163, 106);
+  --lightgreen-theme: rgb(156, 255, 189);
+  --darkgreen-theme: rgb(0, 132, 42);
+  /* blue */
+  --blue-theme: rgb(73, 122, 157);
+  --lightblue-theme: rgb(141, 207, 255);
+  --darkblue-theme: rgb(0, 120, 206);
+  /* crimson */
+  --crimson-theme: rgb(233, 22, 64);
+  --lightcrimson-theme: rgb(255, 129, 154);
+  --darkcrimson-theme: rgb(198, 0, 40);
+  /* pink */
+  --pink-theme: rgb(233, 115, 197);
+  --lightpink-theme: rgb(255, 187, 234);
+  --darkpink-theme: rgb(201, 43, 154);
+  /* avocado */
+  --avocado-theme: rgb(162, 208, 156);
+  --lightavocado-theme: rgb(210, 255, 207);
+  --darkavocado-theme: rgb(103, 200, 93);
+  --select-text: rgb(24, 24, 24);
+  --avocado-img: url("../resources/images/logos/LD_AV.png");
+  --yellow-img: url("../resources/images/logos/DL_R.png");
+  --crimson-img: url("../resources/images/logos/LD_CR.png");
+  --blue-img: url("../resources/images/logos/LD_BL.png");
+  --green-img: url("../resources/images/logos/LD_GR.png");
+  --pink-img: url("../resources/images/logos/LD_PI.png");
+
+  --lightcolor-theme: var(--lightpink-theme);
+  --darkcolor-theme: var(--darkpink-theme);
+  --color-theme: var(--pink-theme);
+  --logo-img: var(--pink-img);
+  --white-black-dim: rgb(22, 22, 22);
+  --wbd-text: rgb(255, 255, 255);
+  --body-color: var(--white-black-dim);
+}
+
+[data-theme="light"] {
+  --body-bg: rgb(24, 24, 24);
+  /* yellow */
+  --yellow-theme: #f8ad02;
+  --lightyellow-theme: #ffdf95;
+  --darkyellow-theme: #f85002;
+  /* green */
+  --green-theme: rgb(77, 163, 106);
+  --lightgreen-theme: rgb(156, 255, 189);
+  --darkgreen-theme: rgb(0, 132, 42);
+  /* blue */
+  --blue-theme: rgb(73, 122, 157);
+  --lightblue-theme: rgb(141, 207, 255);
+  --darkblue-theme: rgb(0, 120, 206);
+  /* crimson */
+  --crimson-theme: rgb(233, 22, 64);
+  --lightcrimson-theme: rgb(255, 129, 154);
+  --darkcrimson-theme: rgb(198, 0, 40);
+  /* pink */
+  --pink-theme: rgb(233, 115, 197);
+  --lightpink-theme: rgb(255, 187, 234);
+  --darkpink-theme: rgb(201, 43, 154);
+  /* avocado */
+  --avocado-theme: rgb(162, 208, 156);
+  --lightavocado-theme: rgb(210, 255, 207);
+  --darkavocado-theme: rgb(103, 200, 93);
+  --select-text: rgb(24, 24, 24);
+  --avocado-img: url("../resources/images/logos/LL_AV.png");
+  --yellow-img: url("../resources/images/logos/LL_R.png");
+  --crimson-img: url("../resources/images/logos/LL_CR.png");
+  --blue-img: url("../resources/images/logos/LL_BL.png");
+  --green-img: url("../resources/images/logos/LL_GR.png");
+  --pink-img: url("../resources/images/logos/LL_PI.png");
+
+  --lightcolor-theme: var(--lightpink-theme);
+  --darkcolor-theme: var(--darkpink-theme);
+  --color-theme: var(--pink-theme);
+  --logo-img: var(--pink-img);
+  --white-black-dim: white;
+  --body-color: rgb(255, 242, 218);
+  --wbd-text: rgb(24, 24, 24);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Chelsea Market", cursive;
+  background: #000000;
+  color: white;
+  overflow-x: hidden;
+  color: var(--wbd-text);
+  background: var(--body-color);
+  min-height: 100vh;
+}
+
+::-moz-selection {
+  color: var(--select-text);
+  background: var(--color-theme);
+}
+
+::selection {
+  color: var(--select-text);
+  background: var(--color-theme);
+}
+
+.header-search {
+  flex: 1;
+  width: 20vw;
+  font-family: "Chelsea Market", cursive;
+  height: 40px;
+  padding: 20px;
+  background: none;
+  border: none;
+  color: var(--white-black-dim);
+  font-size: 23px;
+  margin-left: 10px;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.search-icon {
+  color: var(--white-black-dim);
+  font-size: x-large;
+  padding: 10px;
+  overflow: hidden;
+  color: var(--white-black-dim);
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.search-h {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  height: 50px;
+  padding-top: 5px;
+  transition: 0.5s;
+  @media (max-width: 850px) {
+    display: none;
+  }
+  &:focus-within {
+    background-color: transparent;
+    color: var(--wbd-text);
+  }
+}
+.header-search:focus {
+  &:focus {
+    background-color: transparent;
+    color: var(--wbd-text);
+  }
+}
+.returns-header {
+  margin-left: 10px;
+}
+.cart-header {
+  font-size: 1.7rem;
+}
+
+.cart {
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.6s;
+  &:hover {
+    transform: translateY(-5px) rotate(20deg);
+  }
+}
+.count {
+  transition: 0.6s;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  font-size: larger;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding-left: 15px;
+  background-color: var(--color-theme);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wbd-text);
+}
+.cart:hover ~ .count {
+  transform: translateY(-5px) rotate(20deg);
+}
+.header-search:focus + .search-icon {
+  color: var(--wbd-text);
+}

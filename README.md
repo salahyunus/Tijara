@@ -21,12 +21,19 @@ Tijara is a state-of-the-art ecommerce platform developed using React, Redux, Re
 
 ## Features
 
-- Explore a diverse collection of products.
+- Detailed comments for every line (for beginners).
+- Dynamic UI brought to another level.
+- Extremely advanced CSS selectors.
+- Completely Responsive, Customizable, Modular design.
+- Dark/Dim/Light Modes support with different color themes.
+- Dunamically updated favicon according to color theme.
 - Add items to your cart and proceed to checkout.
 - Secure payments powered by Stripe.
 - User authentication and account management.
 - Effortless navigation using React Router.
 - Fluent state management using Redux.
+- Awesome animations & transitions with pure CSS.
+- Readable code with best practices and optimisation.
 
 ## Installation
 
