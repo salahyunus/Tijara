@@ -1,62 +1,85 @@
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
+/*  ----------------------- ﷽  ------------------------ */
 
+// Navigation
+import { Link } from "react-router-dom";
+// useState hook for rendering logo dynamically and some hover effects
+import React, { useState } from "react";
+// Initial logo (red theme - dark mode)
 import logo from "../resources/images/logos/LL_CR.png";
 import darklogo from "../resources/images/logos/LD_CR.png";
-
+// FontAwesome Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faPerson } from "@fortawesome/free-solid-svg-icons";
+
+//  import { useSelector } from "react-redux";
+// const CartContainer = () => {
+//   const { cartItems, total, amount } = useSelector((state) => state.cart);
+// }
+
+// Styled Components
 import styled from "styled-components";
 
 function Header() {
+  // logo useState & hover effects
   const [logoSrc, setLogoSrc] = useState(logo);
+  //       read       write             initial value
+
   const handleMouseOver = () => {
     setLogoSrc(darklogo);
   };
   const handleMouseOut = () => {
     setLogoSrc(logo);
   };
+
   return (
     <Nav>
       <Link to="/">
-        <Logo>
+        <div className="header-logo">
           <img
             src={logoSrc}
             alt="LOGO"
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
           />
-        </Logo>
+        </div>
       </Link>
-      <NavMenu>
-        <div className="search-h">
+      <div className="nav-menu">
+        <div className="search-container">
           <input
             type="search"
-            className="header-search"
+            className="search-input"
             placeholder="Search Products..."
           />
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
         </div>
-        <a href="/home">
-          <span className="returns-header">Orders</span>
-        </a>
-        <a href="/home">
-          <span className="returns-header">Projects</span>
-        </a>
-        <div className="cart">
-          <FontAwesomeIcon icon={faCartShopping} className="cart-header" />
+        <Link to="/orders">
+          <span className="orders-header underhover navhover">Orders</span>
+        </Link>
+        <Link to="*">
+          <span className="returns-header underhover navhover">Tech</span>
+        </Link>
+        <Link to="checkout">
+          <div className="cart-container">
+            <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
+          </div>
+          <p className="cart-quantity">1</p>
+        </Link>
+      </div>
+      <Link to="/login">
+        {/* here's how to implement inline styling */}
+        <div className="login-btn" style={{ paddingTop: "12px" }}>
+          <FontAwesomeIcon icon={faPerson} className="cart-header" />
+          {"    "}Login
         </div>
-        <span className="count">1</span>
-      </NavMenu>
-      <Login>
-        <FontAwesomeIcon icon={faPerson} className="cart-header" />
-        {"    "}Login
-      </Login>
+      </Link>
     </Nav>
   );
 }
+/* I Don't recommend using styled-com. but I only used 
+it here in the Nav to show u how */
+
 const Nav = styled.nav`
   position: fixed;
   top: 0;
@@ -71,99 +94,6 @@ const Nav = styled.nav`
   letter-spacing: 16px;
   z-index: 3;
   user-select: none;
-`;
-const Logo = styled.a`
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  padding: 0;
-  width: 60px;
-  margin-top: 4px;
-  max-height: 75px;
-  font-size: 0;
-  display: inline-block;
-  user-select: none;
-  img {
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    user-select: none;
-  }
-`;
-const NavMenu = styled.div`
-  margin: auto;
-  align-items: center;
-  display: flex;
-  flex-flow: row nowrap;
-  position: relative;
-  margin-right: auto;
-  margin-left: 25px;
-  user-select: none;
-  a {
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    img {
-      height: 24px;
-      width: 24px;
-      min-width: 20px;
-      margin-right: 1.5px;
-      &:hover {
-        content: url(darklogo);
-      }
-    }
-    span {
-      color: rgb(249, 249, 249);
-      font-size: 20px;
-      letter-spacing: 1.42px;
-      line-height: 1.08;
-      padding: 2px 0px;
-      white-space: nowrap;
-      position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        height: 2px;
-        background-color: rgb(249, 249, 249);
-        border-radius: 0px 0px 4px 4px;
-        bottom: -6px;
-        opacity: 0;
-        left: 0px;
-        right: 0px;
-        transform-origin: left center;
-        transform: scaleX(0);
-        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-        visibility: hidden;
-        width: auto;
-      }
-    }
-    &:hover {
-      span:before {
-        transform: scaleX(1);
-        visibility: visible;
-        opacity: 1 !important;
-      }
-    }
-  }
-  @media (max-width: 630px) {
-    display: none;
-  }
-`;
-
-const Login = styled.a`
-  background-color: transparent;
-  padding: 12px 35px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border: 1px solid #f9f9f9;
-  border-radius: 4px;
-  transition: all 0.2s ease 0s;
-  &:hover {
-    cursor: pointer;
-    background-color: #f9f9f9;
-    color: #000;
-    border-color: transparent;
-  }
 `;
 
 export default Header;

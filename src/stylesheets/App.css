@@ -1,3 +1,5 @@
+/*  ----------------------- ﷽  ------------------------ */
+
 @import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap");
 
 [data-theme="dark"] {
@@ -128,20 +130,34 @@
   --body-color: rgb(255, 242, 218);
   --wbd-text: rgb(24, 24, 24);
 }
+
+/* --------------------- Basic styles ------------------------------ */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  user-select: none;
+  font-family: "Chelsea Market", cursive;
 }
 
 body {
-  font-family: "Chelsea Market", cursive;
   background: #000000;
   color: white;
   overflow-x: hidden;
   color: var(--wbd-text);
   background: var(--body-color);
   min-height: 100vh;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* Note that we won't use anchors in this project */
+a {
+  text-decoration: none;
+  color: var(--wbd-text);
 }
 
 ::-moz-selection {
@@ -154,8 +170,49 @@ body {
   background: var(--color-theme);
 }
 
-.header-search {
-  flex: 1;
+/* ---------------------------- Header  ----------------------------------- */
+/* General Hover Effects */
+a span.underhover:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: var(--color-theme);
+  border-radius: 0px 0px 4px 4px;
+  bottom: -6px;
+  opacity: 0;
+  left: 0px;
+  right: 0px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  visibility: hidden;
+  width: auto;
+}
+a:hover span.underhover:before {
+  transform: scaleX(1);
+  visibility: visible;
+  opacity: 1 !important;
+}
+a span.navhover {
+  color: rgb(249, 249, 249);
+  font-size: 20px;
+  letter-spacing: 1.42px;
+  line-height: 1.08;
+  padding: 2px 0px;
+  white-space: nowrap;
+  position: relative;
+}
+a span.underhover {
+  color: rgb(249, 249, 249);
+  font-size: larger;
+  line-height: 1.08;
+  padding: 2px 0px;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* ======= Search ====== */
+.search-input {
   width: 20vw;
   font-family: "Chelsea Market", cursive;
   height: 40px;
@@ -167,28 +224,29 @@ body {
   margin-left: 10px;
 }
 
-*:focus {
-  outline: none;
-}
-
-a {
-  text-decoration: none;
-}
-
 .search-icon {
-  color: var(--white-black-dim);
   font-size: x-large;
   padding: 10px;
   overflow: hidden;
   color: var(--white-black-dim);
   padding-bottom: 20px;
   cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
 }
-
-.search-h {
-  background-color: #fff;
+.search-container {
+  background-color: var(--wbd-text);
   border-radius: 20px;
+
+  /* I used box-shadow only for light mode
+  you can go into variables above and add an rgba var
+  and use it here for different mode... as u like.
+   */
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+
   display: flex;
   height: 50px;
   padding-top: 5px;
@@ -201,20 +259,71 @@ a {
     color: var(--wbd-text);
   }
 }
-.header-search:focus {
+.search-input:focus {
   &:focus {
     background-color: transparent;
     color: var(--wbd-text);
   }
 }
-.returns-header {
+.search-input:focus + .search-icon {
+  color: var(--wbd-text);
+}
+/* === logo === */
+.header-logo {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  padding: 0;
+  width: 60px;
+  margin-top: 4px;
+  max-height: 75px;
+  font-size: 0;
+  display: inline-block;
+  user-select: none;
+}
+.header-logo img {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+/* === navmenu === */
+.nav-menu {
+  margin: auto;
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  margin-right: auto;
+  margin-left: 25px;
+  user-select: none;
+}
+/* links are treated as anchors in css */
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+@media (max-width: 630px) {
+  .nav-menu {
+    display: none;
+  }
+}
+.orders-header {
   margin-left: 10px;
 }
-.cart-header {
+
+/* ==== cart ==== */
+
+.cart-icon {
   font-size: 1.7rem;
 }
 
-.cart {
+.cart-container {
+  text-decoration: none;
+  /* color assign to avoid link render coloring */
+  color: var(--wbd-text);
   margin-left: 10px;
   cursor: pointer;
   transition: 0.6s;
@@ -222,7 +331,7 @@ a {
     transform: translateY(-5px) rotate(20deg);
   }
 }
-.count {
+.cart-quantity {
   transition: 0.6s;
   position: absolute;
   top: -5px;
@@ -238,9 +347,130 @@ a {
   justify-content: center;
   color: var(--wbd-text);
 }
-.cart:hover ~ .count {
+.cart-container:hover ~ .cart-quantity {
   transform: translateY(-5px) rotate(20deg);
 }
-.header-search:focus + .search-icon {
+/* === login button === */
+.login-btn {
+  background-color: transparent;
+  padding: 12px 35px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+  transition: all 0.5s ease 0s;
   color: var(--wbd-text);
+}
+.login-btn:hover {
+  cursor: pointer;
+  background-color: #f9f9f9;
+  color: #000;
+  border-color: transparent;
+}
+
+/* ----------------------- Login ---------------------- */
+
+.login-head-logo {
+  padding: 0;
+  width: 12.5vw;
+  user-select: none;
+  position: relative;
+  margin: 20px 20px;
+}
+
+.login-head-logo img {
+  width: 100%;
+  user-select: none;
+}
+.loginContainer {
+  margin-top: 12vh;
+  position: relative;
+}
+
+.login-wrapper {
+  border-radius: 30px;
+  /* width: 35vw; */
+  min-width: 35vw;
+  min-height: 80vh;
+  height: auto;
+  background-color: rgba(34, 34, 34, 0.344);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(255, 255, 255, 0.338);
+  justify-content: center;
+  align-items: center;
+}
+.login-input-box {
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+  position: relative;
+}
+.login-input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  color: var(--wbd-text);
+  font-size: large;
+  font-family: "Chelsea Market", cursive;
+  padding: 20px 45px 20px 20px;
+  transition: 0.5s;
+}
+.login-input-box input:hover {
+  border: 5px solid rgba(255, 255, 255, 0.2);
+}
+.login-input-box input::placeholder {
+  color: var(--wbd-text);
+}
+.login-icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+}
+.login-form h1 {
+  color: var(--wbd-text);
+}
+.login-wrapper .agree-terms {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin: -15px 0 15px;
+}
+.agree-terms label {
+  padding: 10px;
+}
+.login-form {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+input[type="password"] {
+  font-family: Verdana;
+  letter-spacing: 0.125em;
+}
+input[type="password"]::placeholder {
+  font-family: "Chelsea Market", cursive;
+  letter-spacing: 0;
+}
+.login-btn-form {
+  height: 45px;
+  max-height: 45px;
+  width: 100%;
+  background-color: var(--wbd-text);
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  transition: 0.5s;
+  font-weight: 600;
+  margin-bottom: 20px;
+  &:hover {
+    color: var(--wbd-text);
+    background-color: var(--white-black-dim);
+    transform: translateY(-10px);
+  }
 }

@@ -4,11 +4,6 @@ Welcome to Tijara, your ultimate online shopping destination!
 
 ![Tijara Logo](public/ogi.png)
 
-- Completely free source code with explanation comments by 'INERM'
-<center>
-  ![Company Logo](./src/resources/images/logos/LD_CR.png)
-</center>
-
 ## Table of Contents
 
 - [Overview](#overview)

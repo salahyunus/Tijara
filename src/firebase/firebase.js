@@ -1,3 +1,5 @@
+/*  ----------------------- ﷽  ------------------------ */
+
 // Services used are: AUTHENTICATION SERVICES & DATABASE SERVICES (FIRESTORE)
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
